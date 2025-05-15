@@ -1,0 +1,13 @@
+---
+- name: Deploy Maven Artifact
+  hosts: local  # Specify the host group (local in this case)
+  become: yes   # Use sudo for elevated privileges (needed to write to /opt/deployment)
+  
+  tasks:
+    - name: Copy the artifact to the deployment directory
+      copy:
+        src: "/var/lib/jenkins/workspace/HelloMaven-CI/target/HelloMaven-1.0-SNAPSHOT.jar"
+        dest: "/opt/deployment/HelloMaven.jar"
+        owner: root       # Set owner of the file (can be customized based on your needs)
+        group: root       # Set group of the file (can be customized based on your needs)
+        mode: '0644'      # Set file permissions (default is typically fine)
