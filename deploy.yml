@@ -6,7 +6,7 @@
   tasks:
     - name: Copy the artifact to the deployment directory
       copy:
-        src: "/var/lib/jenkins/workspace/HelloMaven-CI/target/HelloMaven-1.0-SNAPSHOT.jar"
+        src: "/var/lib/jenkins/workspace/mn/target/HelloMaven-1.0-SNAPSHOT.jar"
         dest: "/opt/deployment/HelloMaven.jar"
         owner: root       # Set owner of the file (can be customized based on your needs)
         group: root       # Set group of the file (can be customized based on your needs)
